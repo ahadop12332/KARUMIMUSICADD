@@ -41,7 +41,7 @@ tgcrypto
 telegraph
 unidecode
 yt-dlp==2024.3.10
-
+git+https://github.com/alexmercerind/youtube-search-python@main
 gtts
 git+https://github.com/AsmSafone/SafoneAPI
 lexica-api==1.5.1
