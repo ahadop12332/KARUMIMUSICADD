@@ -55,3 +55,17 @@ openai==0.28.0
 mpv
 moviepy
 python-whois
+#ok
+SpeechRecognition
+aiohttp 
+daxxhub
+numpy
+pillow==10.0.0
+search_engine_parser
+py-tgcalls==0.9.7
+pyrogram==2.0.106
+pickledb
+python-telegram-bot==20.7
+img2pdf
+cloudscraper
+pycryptodome
