@@ -13,7 +13,10 @@ from DAXXMUSIC import app, Userbot
 from typing import List, Union
 from pyrogram import filters
 from DAXXMUSIC.core.call import DAXX
-
+from pyrogram.types import VideoChatEnded, Message
+from pytgcalls import PyTgCalls, StreamType
+from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
+from pytgcalls.exceptions import (NoActiveGroupCall, TelegramServerError, AlreadyJoinedError)
 
 @app.on_message(filters.command(["vcinfo"], ["/", "!"]))
 async def strcall(client, message):
