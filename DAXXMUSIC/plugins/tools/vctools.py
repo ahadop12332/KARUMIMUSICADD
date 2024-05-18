@@ -12,7 +12,49 @@ from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant, ChatAdmi
 from DAXXMUSIC import app, Userbot
 from typing import List, Union
 from pyrogram import filters
+from TeamSuperBan.core.call import DAXX
 
+
+@app.on_message(filters.command(["vcinfo"], ["/", "!"]))
+async def strcall(client, message):
+    assistant = await group_assistant(DAXX, message.chat.id)
+    try:
+        await assistant.join_group_call(message.chat.id, AudioPiped("./TeamSuperBan/assets/call.mp3"), stream_type=StreamType().pulse_stream)
+        text = "- Beloveds in the call 🫶 :\n\n"
+        participants = await assistant.get_participants(message.chat.id)
+        k = 0
+        for participant in participants:
+            info = participant
+            if info.muted == False:
+                mut = "ꜱᴘᴇᴀᴋɪɴɢ 🗣 "
+            else:
+                mut = "ᴍᴜᴛᴇᴅ 🔕 "
+            user = await client.get_users(participant.user_id)
+            k += 1
+            text += f"{k} ➤ {user.mention} ➤ {mut}\n"
+        text += f"\nɴᴜᴍʙᴇʀ ᴏꜰ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛꜱ : {len(participants)}"
+        await message.reply(f"{text}")
+        await asyncio.sleep(7)
+        await assistant.leave_group_call(message.chat.id)
+    except NoActiveGroupCall:
+        await message.reply(f"ᴛʜᴇ ᴄᴀʟʟ ɪꜱ ɴᴏᴛ ᴏᴘᴇɴ ᴀᴛ ᴀʟʟ")
+    except TelegramServerError:
+        await message.reply(f"ꜱᴇɴᴅ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ ᴀɢᴀɪɴ, ᴛʜᴇʀᴇ ɪꜱ ᴀ ᴘʀᴏʙʟᴇᴍ ᴡɪᴛʜ ᴛʜᴇ ᴛᴇʟᴇɢʀᴀᴍ ꜱᴇʀᴠᴇʀ ❌")
+    except AlreadyJoinedError:
+        text = "ʙᴇʟᴏᴠᴇᴅꜱ ɪɴ ᴛʜᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ 🫶 :\n\n"
+        participants = await assistant.get_participants(message.chat.id)
+        k = 0
+        for participant in participants:
+            info = participant
+            if info.muted == False:
+                mut = "ꜱᴘᴇᴀᴋɪɴɢ 🗣"
+            else:
+                mut = "ᴍᴜᴛᴇᴅ 🔕 "
+            user = await client.get_users(participant.user_id)
+            k += 1
+            text += f"{k} ➤ {user.mention} ➤ {mut}\n"
+        text += f"\nɴᴜᴍʙᴇʀ ᴏꜰ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛꜱ : {len(participants)}"
+        await message.reply(f"{text}")
 
 
 other_filters = filters.group  & ~filters.via_bot & ~filters.forwarded
