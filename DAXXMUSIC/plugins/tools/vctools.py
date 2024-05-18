@@ -12,7 +12,7 @@ from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant, ChatAdmi
 from DAXXMUSIC import app, Userbot
 from typing import List, Union
 from pyrogram import filters
-from TeamSuperBan.core.call import DAXX
+from DAXXMUSIC.core.call import DAXX
 
 
 @app.on_message(filters.command(["vcinfo"], ["/", "!"]))
