@@ -43,13 +43,18 @@ async def start(_, msg):
               InlineKeyboardButton("𝗕𝗔𝗡 𝗔𝗟𝗟︎", url=f"https://github.com/Sunnykumar1122/BABYBANALL"),
               InlineKeyboardButton("︎𝗠𝗨𝗦𝗜𝗖", url=f"https://github.com/Sunnykumar1122/BABYMUSIC"),
               ],
-              [
-              InlineKeyboardButton("𝗠𝗔𝗡𝗔𝗚𝗘𝗠𝗘𝗡𝗧︎", url=f"https://github.com/Sunnykumar1122/misschatbot"),
-InlineKeyboardButton("ᴄʜᴀᴛ ɢʀᴏᴜᴘ", url="https://t.me/FUKRA_POWERED"),
+[
+            InlineKeyboardButton("𝗠𝗔𝗡𝗔𝗚𝗘𝗠𝗘𝗡𝗧︎", url=f"https://github.com/Sunnykumar1122/misschatbot"),
+InlineKeyboardButton("channel", url="https://t.me/FUKRA_POWERED"),
 ],
 
 
-            
+
+
+
+
+
+     
 
     
    reply_markup = InlineKeyboardMarkup(buttons)
