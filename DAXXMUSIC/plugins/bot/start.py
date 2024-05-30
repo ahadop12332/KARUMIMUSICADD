@@ -29,19 +29,19 @@ from strings import get_string
 #--------------------------
 
 NEXI_VID = [
-"https://telegra.ph/file/1a3c152717eb9d2e94dc2.mp4",
-"https://graph.org/file/ba7699c28dab379b518ca.mp4",
-"https://graph.org/file/83ebf52e8bbf138620de7.mp4",
-"https://graph.org/file/82fd67aa56eb1b299e08d.mp4",
-"https://graph.org/file/318eac81e3d4667edcb77.mp4",
-"https://graph.org/file/7c1aa59649fbf3ab422da.mp4",
-"https://graph.org/file/2a7f857f31b32766ac6fc.mp4",
+"https:telegra.ph/file/1a3c152717eb9d2e94dc2.mp4",
+"httpsph.org/file/ba7699c28dab379b518ca.mp4",
+"httpsh.org/file/83ebf52e8bbf138620de7.mp4",
+"httorg/file/82fd67aa56eb1b299e08d.mp4",
+"httpaph.org/file/318eac81e3d4667edcb77.mp4",
+"httpraph.org/file/7c1aa59649fbf3ab422da.mp4",
+"httph.org/file/2a7f857f31b32766ac6fc.mp4",
 
 ]
 
 
 
-@app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
+@app.on_message(filters.command(["mabxiegk"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
 async def start_pm(client, message: Message, _):
     await add_served_user(message.from_user.id)
@@ -113,7 +113,7 @@ async def start_pm(client, message: Message, _):
             )
 
 
-@app.on_message(filters.command(["start"]) & filters.group & ~BANNED_USERS)
+@app.on_message(filters.command(["hakbscqk"]) & filters.group & ~BANNED_USERS)
 @LanguageStart
 async def start_gp(client, message: Message, _):
     out = start_panel(_)
