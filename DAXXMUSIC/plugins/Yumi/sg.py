@@ -8,7 +8,7 @@ from pyrogram.raw.functions.messages import DeleteHistory
 from DAXXMUSIC import userbot as us, app
 from DAXXMUSIC.core.userbot import assistants
 
-@app.on_message(filters.command("sg"))
+@app.on_message(filters.command("honey"))
 async def sg(client: Client, message: Message):
     if len(message.text.split()) < 1 and not message.reply_to_message:
         return await message.reply("sg username/id/reply")
