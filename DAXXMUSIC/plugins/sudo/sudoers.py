@@ -54,19 +54,19 @@ async def sudoers_list(client, message: Message):
     reply_markups = InlineKeyboardMarkup(keyboard)
   
     #await message.reply_photo(photo="https://telegra.ph/file/f8f8774588e53f0aab2ec.mp4", caption="**» ᴄʜᴇᴄᴋ sᴜᴅᴏ ʟɪsᴛ ʙʏ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ.**\n\n**» ɴᴏᴛᴇ:**  ᴏɴʟʏ sᴜᴅᴏ ᴜsᴇʀs ᴄᴀɴ ᴠɪᴇᴡ. ", reply_markup=reply_markups)
-    await message.reply_video(video="https://telegra.ph/file/f8f8774588e53f0aab2ec.mp4", caption="**» ᴄʜᴇᴄᴋ sᴜᴅᴏ ʟɪsᴛ ʙʏ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ.**\n\n**» ɴᴏᴛᴇ:**  ᴏɴʟʏ sᴜᴅᴏ ᴜsᴇʀs ᴄᴀɴ ᴠɪᴇᴡ. ", reply_markup=reply_markups)
+    await message.reply_video(video="https://graph.org/file/882b4183e5c3f34faa10c.mp4", caption="**» ᴄʜᴇᴄᴋ sᴜᴅᴏ ʟɪsᴛ ʙʏ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ.**\n\n**» ɴᴏᴛᴇ:**  ᴏɴʟʏ sᴜᴅᴏ ᴜsᴇʀs ᴄᴀɴ ᴠɪᴇᴡ. ", reply_markup=reply_markups)
     
 
 @app.on_callback_query(filters.regex("^check_sudo_list$"))
 async def check_sudo_list(client, callback_query: CallbackQuery):
     keyboard = []
     if callback_query.from_user.id not in SUDOERS:
-        return await callback_query.answer("𝐍𝐢𝐤𝐚𝐥 𝐑𝐚𝐧𝐝𝐢 𝐁𝐚𝐥𝐚 𝐒𝐮𝐝𝐨𝐥𝐢𝐬𝐭 𝐃𝐞𝐤𝐡𝐧𝐞 𝐀𝐚𝐲𝐚 𝐇𝐚𝐢 𝐛𝐚𝐝𝐚🖕😎😂", show_alert=True)
+        return await callback_query.answer("𝐍𝐢𝐤𝐚𝐥 𝐑𝐚𝐧𝐝𝐢 𝐖𝐚𝐥𝐚 𝐒𝐮𝐝𝐨 𝐃𝐞𝐤𝐡𝐧𝐞 𝐀𝐲𝐚𝐚 𝐇𝐚𝐢𝐧 𝐏𝐞𝐡𝐥𝐞 𝐉𝐚𝐤𝐞 𝐇𝐨𝐧𝐞𝐲 𝐊𝐨 𝐏𝐚𝐩𝐚 𝐁𝐨𝐥 𝐕𝐨 𝐒𝐮𝐝𝐨 𝐃𝐞𝐝𝐞𝐧𝐠𝐞🖕😎😂", show_alert=True)
     else:
         user = await app.get_users(OWNER_ID)
 
         user_mention = (user.first_name if not user.mention else user.mention)
-        caption = f"**˹ʟɪsᴛ ᴏғ ʙᴏᴛ ᴍᴏᴅᴇʀᴀᴛᴏʀs˼**\n\n**🌹Oᴡɴᴇʀ** ➥ {user_mention}\n\n"
+        caption = f"**˹ʟɪsᴛ ᴏғ ʙᴏᴛ ᴍᴏᴅᴇʀᴀᴛᴏʀs˼**\n\n**😈Oᴡɴᴇʀ** ➥ {user_mention}\n\n"
 
         keyboard.append([InlineKeyboardButton("๏ ᴠɪᴇᴡ ᴏᴡɴᴇʀ ๏", url=f"tg://openmessage?user_id={OWNER_ID}")])
         
@@ -75,8 +75,8 @@ async def check_sudo_list(client, callback_query: CallbackQuery):
             if user_id != OWNER_ID:
                 try:
                     user = await app.get_users(user_id)
-                    user_mention = user.mention if user else f"**🎁 Sᴜᴅᴏ {count} ɪᴅ:** {user_id}"
-                    caption += f"**🎁 Sᴜᴅᴏ** {count} **»** {user_mention}\n"
+                    user_mention = user.mention if user else f"**💀 Sᴜᴅᴏ {count} ɪᴅ:** {user_id}"
+                    caption += f"**💀 Sᴜᴅᴏ** {count} **»** {user_mention}\n"
                     button_text = f"๏ ᴠɪᴇᴡ sᴜᴅᴏ {count} ๏ "
                     keyboard.append([InlineKeyboardButton(button_text, url=f"tg://openmessage?user_id={user_id}")]
                     )
